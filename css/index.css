@@ -25,6 +25,7 @@
   
   .menu{
     --rLinkColor: var(--menuLinkColor, currentColor);
+    width: 100%;
   }
   
   .menu__link{
@@ -54,17 +55,25 @@
   =====
   */
   
-  .menu{
-    background-color: var(--menuBackgroundColor, #f0f0f0);
+  .menu__group{
+    background-color: var(--menuBackgroundColor, #D1D1D1);
     box-shadow: var(--menuBoxShadow, 0 1px 3px 0 rgba(0, 0, 0, .12), 0 1px 2px 0 rgba(0, 0, 0, .24));
+    -webkit-border-bottom-right-radius: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  -moz-border-radius-bottomright: 10px;
+  -moz-border-radius-bottomleft: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  font-size: 1.3em;
   }
   
   .menu__list{
-    display: flex;  
+    display: flex;
+    justify-content: space-between;
   }
   
   .menu__link{
-    padding: var(--menuLinkPadding, 1.5rem 2.5rem);
+    padding: 20px;
     font-weight: 700;
     text-transform: uppercase;
   }
@@ -111,6 +120,7 @@
   .text-underlined:hover::after{
     width: 100%;
     transition-duration: .2s;
+    background-image: url('../img/home.jpg');
   }
   
   /*
@@ -142,7 +152,7 @@
   
   .page{
     box-sizing: border-box;
-    max-width: 640px;
+    width: 100%;
     padding-bottom: 55rem;
     padding-left: 0.75rem;
     padding-right: .75rem;
