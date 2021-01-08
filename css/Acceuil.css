@@ -162,49 +162,50 @@
     margin-top: 3rem;
   }
   
-.divphoto{
-    
-}
 
-  
-      
-      
- 
 
-.divphoto > div{
-    display: inline-block;
-
-}
 
 
 .img1{
-    height: 350px;
+    height: 720px;
+    width: 100%;
+    margin-top: 60px;
 
 }
-.img2{
-    height: 350px;
-    width: 700px;
-}
+
+
 h1{
     
-
-    background-color: #bebebe;
-    padding: 10px 15px;
+   
+    
+    text-align: center;
+    text-decoration: underline solid #070700;
+    font-size: 28px;
+    padding-left: 0px;
+    padding-right: 0px;
     font-family: 'Heebo', sans-serif;
     font-weight: bold;
-    border-bottom: 1px solid rgb(138, 138, 138);
-    border-top: 1px solid rgb(138, 138, 138);
+    
+    
 }
 
 p{
     font-size: 21px;
+    text-align: center;
+    width: 1050px;
+    margin: auto;
+    
     
 }
-h1{
-    background-color: #bebebe;
-    padding: 10px 15px;
-    font-family: 'Heebo', sans-serif;
-    font-weight: bold;
-    border-bottom: 1px solid rgb(138, 138, 138);
-    border-top: 1px solid rgb(138, 138, 138);
+.boutondiv{
+  margin-left: auto;
+  margin-right: auto;
+  
+  width: 50px;
+  height: 25px;
+}
+.btnjml{
+  border-radius: 15px;
+  width: 50px;
+  height: 25px;
 }
