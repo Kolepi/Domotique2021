@@ -9,7 +9,7 @@ html,body{
     margin-top: 10px;
     padding: 10px;
     padding-left: 20px;
-    border-radius: 18px;
+    border-radius: 25px;
     outline: none;
     
 }
@@ -29,7 +29,7 @@ html,body{
     margin-top: 55%;
     padding: 10px;
     padding-left: 20px;
-    border-radius: 18px;
+    border-radius: 25px;
     outline: none;
 }
 .coche {
@@ -41,26 +41,27 @@ html,body{
     
 }
 .connection {
-    display: flex;
-    margin-left: 10%;
-    margin-top: 118%;
+    display: fixed;
+    margin-left: -55%;
+    margin-top: 105%;
     padding: 10px;
     padding-left: 20px;
-    border-radius: 18px;
+    border-radius: 25px;
     outline: none;
 }
 .connection_1 {
-    display: flex;
-    margin-left: 10%;
+    display: fixed;
+    margin-left: -55%;
+    margin-right: 100%;
     margin-top: 10px;
     padding: 10px;
     padding-left: 20px;
-    border-radius: 18px;
+    border-radius: 25px;
     outline: none;
 }
 .connection_2 {
     display: flex;
-    margin-left: 33.5%;
+    margin-left: -33.5%;
     margin-top: 15px;
     padding: 5px;
     border-radius: 16px;
@@ -204,9 +205,9 @@ body{
 .page{
   box-sizing: border-box;
   width: 100%;
-  padding-bottom: 55rem;
-  padding-left: 0.75rem;
-  padding-right: .75rem;
+  padding-bottom: 13%;
+  padding-left: 0;
+  padding-right: 0;
   margin: auto;
 }
 
@@ -216,3 +217,50 @@ body{
 
 /* End navbar*/ 
     
+/* Footer */
+
+.footer{
+  background: #21C2FF;
+  padding: 15px 0px 0px 15px;
+  color:white;
+  position: fixed;
+  bottom: 0px;
+  min-width: 100%;
+  
+  .links{
+    ul {list-style-type: none;}
+    li a{
+      color: white;
+      transition: color .2s;
+      &:hover{
+        text-decoration:none;
+        color:#4180CB;
+        }
+    }
+  }  
+  .about-company{
+    i{font-size: 25px;}
+    a{
+      color:white;
+      transition: color .2s;
+      &:hover{color:#4180CB}
+    }
+  } 
+  .location{
+    i{font-size: 18px;}
+  }
+  .copyright p{border-top:1px solid rgba(255,255,255,.1);} 
+}
+
+/* End footer */
+
+.ligne_verticale
+{
+    position: flex;
+    width:100%;
+    border-left:3px solid #D1D1D1;
+    height:67px;
+    margin-top: 15%;
+    padding-bottom: 75%;
+   
+}
