@@ -162,36 +162,49 @@
     margin-top: 3rem;
   }
   
-
-  
-      
-      
-  
-  .img1{
-      background-size: 50%;
-  }
-
-  
-
-
-.divphoto2{
-    display: flex;
-    height: 300px;
-    border-bottom: 1px solid rgb(141, 141, 141);
+.divphoto{
     
 }
-.divphoto2 > div{
-    flex: 1;
-    background-size: cover;
-    content:"";
-    background-repeat: no-repeat;
-    background-position: center;
 
+  
+      
+      
+ 
+
+.divphoto > div{
+    display: inline-block;
 
 }
-.quisommenousdiv{
-    background-color: #D1D1D1;
+
+
+.img1{
+    height: 350px;
+
+}
+.img2{
+    height: 350px;
+    width: 700px;
+}
+h1{
+    
+
+    background-color: #bebebe;
     padding: 10px 15px;
     font-family: 'Heebo', sans-serif;
     font-weight: bold;
     border-bottom: 1px solid rgb(138, 138, 138);
+    border-top: 1px solid rgb(138, 138, 138);
+}
+
+p{
+    font-size: 21px;
+    
+}
+h1{
+    background-color: #bebebe;
+    padding: 10px 15px;
+    font-family: 'Heebo', sans-serif;
+    font-weight: bold;
+    border-bottom: 1px solid rgb(138, 138, 138);
+    border-top: 1px solid rgb(138, 138, 138);
+}
