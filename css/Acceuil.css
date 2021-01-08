@@ -175,13 +175,17 @@
     display: inline-block;
 
 }
-.div > img{
-    max-width: 100%;
-    max-height: 100%;
+
+
+.img1{
+    height: 350px;
+
 }
-
-
-.quisommenousdiv{
+.img2{
+    height: 350px;
+    width: 700px;
+}
+h1{
     
 
     background-color: #bebebe;
@@ -189,9 +193,18 @@
     font-family: 'Heebo', sans-serif;
     font-weight: bold;
     border-bottom: 1px solid rgb(138, 138, 138);
+    border-top: 1px solid rgb(138, 138, 138);
 }
 
-.quisommenousp{
+p{
     font-size: 21px;
     
+}
+h1{
+    background-color: #bebebe;
+    padding: 10px 15px;
+    font-family: 'Heebo', sans-serif;
+    font-weight: bold;
+    border-bottom: 1px solid rgb(138, 138, 138);
+    border-top: 1px solid rgb(138, 138, 138);
 }
