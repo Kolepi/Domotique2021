@@ -7,14 +7,36 @@
     <link rel="stylesheet" href="../css/style_mon_compte.css">
 </head>
 <body>
-    <div>
-        <input type="password" placeholder="Ancien mot de passe">
-        <input type="password" placeholder="Nouveau mot de passe">
-        <input type="password" placeholder="Confirmez votre nouveau mot de passe">
-        <input type="email" placeholder="Ancien e-mail">
-        <input type="email" placeholder="Nouvelle e-mail">
-        <input type="text" placeholder="Ville">
-        <input type="text" placeholder="Adresse">
+
+
+    <!-- Profile Picture Editing -->
+
+    <div class="card_1"> <!-- DIV QUI ENGLOBE TEXT AREA AUSSI-->
+        <h3>Mon Profil</h3>
+        <section class="card_2">
+            <img class="Avatar" src="https://twirpz.files.wordpress.com/2015/06/twitter-avi-gender-balanced-figure.png?w=640" width="396px" height="415px">
+            <label for="file" class="label-file">Changer de photo</label>
+            <input id="file" class="input-file" type="file">
+            <!-- <input type="file" class="butn2" href="#">Changer de Photo -->
+        </section>
+
+    <!-- End Profile Picture Editing -->
+
+    <!-- Text Area -->
+
+        <div class="position">
+            <input type="password" placeholder="Ancien mot de passe" class="posi_1">
+            <input type="password" placeholder="Nouveau mot de passe" class="posi_2">
+            <input type="password" placeholder="Confirmez le nouveau mot de passe" class="posi_2">
+            <input type="email" placeholder="Ancien e-mail" class="posi_2">
+            <input type="email" placeholder="Nouvelle e-mail" class="posi_2">
+            <input type="text" placeholder="Ville" class="posi_2">
+            <input type="text" placeholder="Adresse" class="posi_3">
+            <button class="butn3" href="#">Enregistrer les modifications</button>
+        </div>
     </div>
+
+    <!-- End Text Area -->
+
 </body>
 </html>
