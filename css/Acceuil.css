@@ -65,17 +65,26 @@
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
   font-size: 1.3em;
+  width: 100%;
+
+
   }
   
   .menu__list{
-    display: flex;
-    justify-content: space-between;
-  }
   
+  }
+  /*Icone de la navbar*/
+  .fas{
+    margin-left: auto;
+    margin-right: auto;
+    width: 6em
+  }
+/*Navbar*/
   .menu__link{
     padding: 20px;
     font-weight: 700;
     text-transform: uppercase;
+  
   }
   
   /* 
@@ -85,6 +94,7 @@
   */
   
   .text-underlined{
+    width: 100%;
     position: relative;
     overflow: hidden;
   
@@ -167,6 +177,7 @@
 .divphoto{
   box-shadow: rgba(7, 7, 6, 0.2) 0px 0px 10px 5px;
   width: 100%;
+  margin-top: 0px;
 }
 
 
