@@ -166,7 +166,7 @@
 
 .divphoto{
   box-shadow: rgba(7, 7, 6, 0.2) 0px 0px 10px 5px;
-  width: 99%;
+  width: 100%;
 }
 
 
@@ -245,11 +245,12 @@ p{
   box-shadow: rgba(7, 7, 6, 0.2) 0px 0px 10px 5px;
   width: 100%;
   padding-top: 20px;
-  margin-top: 50px;
+  margin-top: 0px;
   margin-left: auto;
   margin-right: auto;
   padding: 30px;
   background: #ffffff;
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
   text-align: center;
+   
 }
