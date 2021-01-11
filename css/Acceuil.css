@@ -1,218 +1,61 @@
-/* Navbar */
-
-.r-link{
-    display: var(--rLinkDisplay, inline-flex) !important;
-  }
-  
-  .r-link[href]{
-    color: var(--rLinkColor) !important;
-    text-decoration: var(--rLinkTextDecoration, none) !important;
-  }
-  
-  .r-list{
-    padding-left: var(--rListPaddingLeft, 0) !important;
-    margin-top: var(--rListMarginTop, 0) !important;
-    margin-bottom: var(--rListMarginBottom, 0) !important;
-    list-style: var(--rListListStyle, none) !important;
-  }
-  
-  
-  /*
-  =====
-  CORE STYLES
-  =====
-  */
-  
-  .menu{
-    --rLinkColor: var(--menuLinkColor, currentColor);
-    width: 100%;
-  }
-  
-  .menu__link{
-    display: var(--menuLinkDisplay, block);
-  }
-  
-  /* 
-  focus state 
-  */
-  
-  .menu__link:focus{
-    outline: var(--menuLinkOutlineWidth, 2px) solid var(--menuLinkOutlineColor, currentColor);
-    outline-offset: var(--menuLinkOutlineOffset);
-  }
-  
-  /* 
-  fading siblings
-  */
-  
-  .menu:hover .menu__link:not(:hover){
-    --rLinkColor: var(--menuLinkColorUnactive, rgba(22, 22, 22, .35));
-  }
-  
-  /*
-  =====
-  PRESENTATION STYLES
-  =====
-  */
-  
-  .menu__group{
-    background-color: var(--menuBackgroundColor, #D1D1D1);
-    box-shadow: var(--menuBoxShadow, 0 1px 3px 0 rgba(0, 0, 0, .12), 0 1px 2px 0 rgba(0, 0, 0, .24));
-    font-size: 1.3em;
-    width: 100%;
-
-
-  }
-
-  
-  
-  /*Icone de la navbar*/
-  .fas{
-    margin-left: auto;
-    margin-right: auto;
-    width: 6em
-  }
-/*Navbar*/
-  .menu__link{
-    padding: 20px;
-    font-weight: 700;
-    text-transform: uppercase;
-  
-  }
-  
-  /* 
-  =====
-  TEXT UNDERLINED
-  =====
-  */
-  
-  .text-underlined{
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-  
-    will-change: color;
-    transition: color .25s ease-out;  
-  }
-  
-  .text-underlined::before, 
-  .text-underlined::after{
-    content: "";
-    width: 0;
-    height: 3px;
-    background-color: var(--textUnderlinedLineColor, currentColor);
-  
-    will-change: width;
-    transition: width .1s ease-out;
-  
-    position: absolute;
-    bottom: 0;
-  }
-  
-  .text-underlined::before{
-    left: 50%;
-    transform: translateX(-50%); 
-  }
-  
-  .text-underlined::after{
-    right: 50%;
-    transform: translateX(50%); 
-  }
-  
-  .text-underlined:hover::before, 
-  .text-underlined:hover::after{
-    width: 100%;
-    transition-duration: .2s;
-    background-image: url('../img/home.jpg');
-  }
-  
-  /*
-  =====
-  SETTINGS
-  =====
-  */
-  
-  .page__custom-settings{
-    --menuBackgroundColor: #6c5ce7;
-    --menuLinkColor: #fff;
-    --menuLinkColorUnactive: #241c69;
-    --menuLinkOutlineOffset: -.5rem; 
-  }
-  
-  /*
+/*
   =====
   DEMO
   =====
   */
-  
-  body{
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Open Sans, Ubuntu, Fira Sans, Helvetica Neue, sans-serif;
-    margin: 0;
-    min-height: 100vh;
-    display: flex;  
-    flex-direction: column;
-    background-color:#D1D1D1;
-  }
-  
-  .page{
-    box-sizing: border-box;
-    width: 100%;
-    padding-bottom: 55rem;
-    height: 1050px;
-    
 
-  }
-  
-  .page__menu:nth-child(n+2){
-    margin-top: 3rem;
-  }
-  
+body {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Open Sans, Ubuntu, Fira Sans, Helvetica Neue, sans-serif;
+  margin: 0;
+  background-color: #D1D1D1;
+}
+
+
 /*image*/
-.divphoto{
+.divphoto {
   box-shadow: rgba(7, 7, 6, 0.2) 0px 0px 10px 5px;
   width: 100%;
   margin-top: 0px;
 }
 
 
-.img1{
-    height: 100%;
-    width: 100%;
-    
+.img1 {
+  height: 100%;
+  width: 100%;
+
 
 }
+
 /*Texte*/
 
-h1{
-    
-   
-    
-    text-align: center;
-    text-decoration: underline solid #070700;
-    font-size: 28px;
-    padding-left: 0px;
-    padding-right: 0px;
-    font-family: 'Heebo', sans-serif;
-    font-weight: bold;
-    
-    
+h1 {
+  text-align: center;
+  text-decoration: underline solid #070700;
+  font-size: 28px;
+  padding-left: 0px;
+  padding-right: 0px;
+  font-family: 'Heebo', sans-serif;
+  font-weight: bold;
 }
 
-p{
-    font-size: 21px;
-    text-align: center;
-    width: 1050px;
-    margin: auto;
-    
-    
+p {
+  font-size: 21px;
+  text-align: center;
+  width: 1050px;
+  margin: auto;
+
+
 }
-.domotiquediv{
+
+.domotiquediv {
   padding-top: 100px;
 }
-.quisommenousdiv{
+
+.quisommenousdiv {
   padding-top: 30px;
 }
-.Nosservicesdiv{
+
+.Nosservicesdiv {
   padding-top: 50px;
 }
 
@@ -232,25 +75,26 @@ p{
 }
 
 /*Bouton Je me lance*/
-.boutondiv{
+.boutondiv {
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;
-  
+
   width: 150px;
   height: 40px;
 }
-.btnjml{
+
+.btnjml {
   color: black;
   border-radius: 0px;
   width: 150px;
   height: 40px;
-  
+
   background-color: #21C2FF;
   outline: none;
   text-decoration: none;
   border: 1px solid #066283;
- 
+
 }
 
 
@@ -261,7 +105,3 @@ p{
   cursor: pointer;
   outline: none;
 }
-
-   
-
-

@@ -1,0 +1,193 @@
+
+/* Footer */
+
+.footer{
+  background: #21C2FF;
+  color:white;
+  position: sticky;
+  z-index: 9;
+  bottom: auto;
+  min-width: 100%;
+  max-height: 31%;
+}
+.footer .links ul {list-style-type: none;}
+.footer .links li a{
+    color: white;
+    transition: color .2s;
+}
+.footer .links a:hover{
+  text-decoration:none;
+  color:#4180CB;
+}
+.footer .about-company i{font-size: 25px;}
+.footer .about-company a{
+  color:white;
+  transition: color .2s;
+}
+.footer .about-company a:hover{color:#4180CB}
+.footer .location i{font-size: 18px;}
+.footer .copyright p{border-top:1px solid rgba(255,255,255,.1);}
+
+
+/* End footer */
+
+/* DashBoard */
+
+
+.slider {
+  width: 50%;
+  margin: 100px auto;
+}
+
+@media screen and (max-width: 1280px){
+  .slider {
+    width: 80%;
+  }
+}
+
+.slick-slide {
+  margin: 0px 20px;
+}
+
+.slick-slide img {
+  width: 100%;
+}
+
+.slick-prev:before,
+.slick-next:before {
+color: black;
+}
+
+.dashboard .slick-arrow:before{
+  color: black;
+}
+
+
+
+.dashboard,
+.dashboard .card{
+  height: 250px !important;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+.dashboard .card.active{
+  background: #353535;
+  color: white;
+  -webkit-box-shadow: inset 0px 0px 5px 5px rgba(0,0,0,0.75);
+  -moz-box-shadow: inset 0px 0px 5px 5px rgba(0,0,0,0.75);
+  box-shadow: inset 0px 0px 5px 5px rgba(0,0,0,0.75);
+}
+.dashboard .card:hover{
+  -webkit-box-shadow: inset 0px 0px 2px 2px rgba(0,0,0,0.75);
+  -moz-box-shadow: inset 0px 0px 2px 2px rgba(0,0,0,0.75);
+  box-shadow: inset 0px 0px 2px 2px rgba(0,0,0,0.75);
+}
+.dashboard .card > i{
+  font-size: 5em;
+}
+
+.dashboard .card .card-closer{
+  position: absolute;
+  right: 8px;
+  top: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.dashboard .card .card-closer i{
+  color: black;
+  transition: all 0.15s ease-in-out;
+}
+.dashboard .card.active .card-closer i{
+  color: white;
+}
+.dashboard .card .card-closer:focus{
+  outline: none;
+}
+.dashboard .card .card-closer:hover{
+  text-decoration: none;
+  text-shadow: 0px 0px 5px rgba(150, 150, 150, 1);
+}
+
+
+.checkbox-container{
+  position: absolute;
+  transform: scale(0.75);
+  bottom: 10%;
+}
+/* End Dashboard */
+
+/* Slider */
+
+#cursors{
+  display: flex;
+}
+
+@media screen and (max-width:1024px){
+  #cursors{
+    display: block;
+  }
+  #cursors > .cursor +
+  .cursor{
+    margin-top: 50px;
+  }
+}
+
+#volume{
+  height: 220px;
+}
+
+#cursors > .cursor{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 50px;
+}
+
+
+#red, #green, #blue {
+	margin: 10px;
+	height: 200px;
+}
+
+#colorpicker {
+	height: 240px;
+	padding: 10px;
+  border: 1px solid #BFBFBF;
+  display: flex;
+  align-items: center;
+}
+
+#result {
+	height: 100px;
+	width: 100px;
+	display: inline-block;
+	color: rgb(127, 127, 127);
+	background: rgb(127, 127, 127);
+	border: 1px solid #fff;
+	box-shadow: 0 0 10px;
+  margin: 0px 15px;
+}
+
+@media screen and (max-width:1024px){
+  #red, #green, #blue {
+    margin: 10px 3px;
+  }
+}
+
+#red .noUi-connect {
+	background: #c0392b;
+}
+
+#green .noUi-connect {
+	background: #27ae60;
+}
+
+#blue .noUi-connect {
+	background: #2980b9;
+}
+
+/* End slider */ 
+
