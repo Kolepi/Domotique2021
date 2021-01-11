@@ -37,17 +37,16 @@ h1 {
   font-weight: bold;
 }
 
-p {
+.texte {
   font-size: 21px;
   text-align: center;
-  width: 1050px;
   margin: auto;
 
 
 }
 
 .domotiquediv {
-  padding-top: 100px;
+  padding-top: 15px;
 }
 
 .quisommenousdiv {
@@ -92,6 +91,7 @@ p {
   outline: none;
   text-decoration: none;
   border: 1px solid #066283;
+  border-radius: 25px;
 
 }
 
@@ -103,3 +103,137 @@ p {
   cursor: pointer;
   outline: none;
 }
+
+/*Icone de la navbar*/
+.fas{
+  margin-left: auto;
+  margin-right: auto;
+  width: 30px;
+}
+/* Navbar */
+
+.r-link{
+  display: inline-flex !important;
+}
+
+.r-link[href]{
+  color: var(--rLinkColor) !important;
+  text-decoration: none !important;
+}
+
+.r-list{
+  padding-left: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  list-style: none !important;
+}
+
+.menu{
+  --rLinkColor: currentColor;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+}
+
+.menu__link{
+  padding: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+
+.menu:hover .menu__link:not(:hover){
+  --rLinkColor: rgba(22, 22, 22, .35);
+}
+
+.menu__group{
+  background-color: var(--menuBackgroundColor, #D1D1D1);
+  box-shadow: var(--menuBoxShadow, 0 1px 3px 0 rgba(0, 0, 0, .12), 0 1px 2px 0 rgba(0, 0, 0, .24));
+  font-size: 1.3em;
+  width: 100%;
+
+
+}
+
+.menu__list{
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu__link{
+  padding: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.text-underlined{
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+
+  will-change: color;
+  transition: color .25s ease-out;  
+}
+
+.text-underlined::before, 
+.text-underlined::after{
+  content: "";
+  width: 0;
+  height: 3px;
+  background-color: currentColor;
+
+  will-change: width;
+  transition: width .1s ease-out;
+
+  position: absolute;
+  bottom: 0;
+}
+
+.text-underlined::before{
+  left: 50%;
+  transform: translateX(-50%); 
+}
+
+.text-underlined::after{
+  right: 50%;
+  transform: translateX(50%); 
+}
+
+.text-underlined:hover::before, 
+.text-underlined:hover::after{
+  width: 100%;
+  transition-duration: .2s;
+  background-image: url('../img/home.jpg');
+}
+
+
+
+.page__custom-settings{
+  --menuBackgroundColor: #6c5ce7;
+  --menuLinkColor: #fff;
+  --menuLinkColorUnactive: #241c69;
+  --menuLinkOutlineOffset: -.5rem; 
+}
+.body{
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Open Sans, Ubuntu, Fira Sans, Helvetica Neue, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;  
+  flex-direction: column;
+}
+
+.page{
+  box-sizing: border-box;
+  width: 100%;
+  padding-bottom: 13%;
+  padding-left: 0;
+  padding-right: 0;
+  margin: auto;
+  height: 100%;
+}
+
+.page__menu:nth-child(n+2){
+  margin-top: 3rem;
+}
+
+/* End navbar*/ 
