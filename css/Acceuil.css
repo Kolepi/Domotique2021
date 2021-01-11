@@ -29,7 +29,9 @@
   }
   
   .menu__link{
-    display: var(--menuLinkDisplay, block);
+    padding: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
   }
   
   /* 
@@ -70,7 +72,8 @@
   .fas{
     margin-left: auto;
     margin-right: auto;
-    width: 6em
+    width: 30px;
+
   }
 /*Navbar*/
   .menu__link{
@@ -126,11 +129,7 @@
     background-image: url('../img/home.jpg');
   }
   
-  /*
-  =====
-  SETTINGS
-  =====
-  */
+
   
   .page__custom-settings{
     --menuBackgroundColor: #6c5ce7;
@@ -139,12 +138,7 @@
     --menuLinkOutlineOffset: -.5rem; 
   }
   
-  /*
-  =====
-  DEMO
-  =====
-  */
-  
+ 
   body{
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Open Sans, Ubuntu, Fira Sans, Helvetica Neue, sans-serif;
     margin: 0;
