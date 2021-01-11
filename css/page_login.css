@@ -1,3 +1,4 @@
+/* Login & Inscription */
 html,body{
     min-height: 100vh;
 }
@@ -88,6 +89,8 @@ html,body{
 .input-form{
     padding-left: 10px;
 }
+
+/* End Login & Inscription */
 
 /* Navbar */
 
