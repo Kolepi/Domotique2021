@@ -1,10 +1,10 @@
 /* Login & Inscription */
 html,body{
-    min-height: 100vh;
+    height: 100%;
 }
 
 
-.inscription {
+.inscription{
     display: flex;
     margin-left: 18%;
     margin-top: 10px;
@@ -14,7 +14,8 @@ html,body{
     outline: none;
     
 }
-.inscription_2 {
+
+.inscription_2{
     display: flex;
     margin-left: 33.5%;
     margin-top: 15px;
@@ -24,7 +25,8 @@ html,body{
     background-color: #21C2FF;
     
 }
-.inscription_3 {
+
+.inscription_3{
     display: flex;
     margin-left: 18%;
     margin-top: 55%;
@@ -33,7 +35,18 @@ html,body{
     border-radius: 25px;
     outline: none;
 }
-.coche {
+
+.ligne_verticale{
+    position: flex;
+    width:100%;
+    border-left:3px solid #D1D1D1;
+    height:67px;
+    margin-top: 15%;
+    padding-bottom: 75%;
+   
+}
+
+.coche{
     margin-left: 0%;
     margin-top: 10px;
     padding: 5px;
@@ -41,7 +54,7 @@ html,body{
     outline: none;
     
 }
-.connection {
+.connection{
     display: fixed;
     margin-left: -55%;
     margin-top: 105%;
@@ -50,7 +63,7 @@ html,body{
     border-radius: 25px;
     outline: none;
 }
-.connection_1 {
+.connection_1{
     display: fixed;
     margin-left: -55%;
     margin-right: 100%;
@@ -60,7 +73,7 @@ html,body{
     border-radius: 25px;
     outline: none;
 }
-.connection_2 {
+.connection_2{
     display: flex;
     margin-left: -33.5%;
     margin-top: 15px;
@@ -85,13 +98,19 @@ html,body{
     display: flex;
     justify-content: center;
     align-content: center;
+    margin-top: 10px;
 }
 .input-form{
     padding-left: 10px;
 }
 
 /* End Login & Inscription */
-
+/*Icone de la navbar*/
+.fas{
+  margin-left: auto;
+  margin-right: auto;
+  width: 30px;
+}
 /* Navbar */
 
 .r-link{
@@ -118,7 +137,9 @@ html,body{
 }
 
 .menu__link{
-  display: block;
+  padding: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 
@@ -127,15 +148,11 @@ html,body{
 }
 
 .menu__group{
-  background-color:#D1D1D1;
+  background-color: var(--menuBackgroundColor, #D1D1D1);
   box-shadow: var(--menuBoxShadow, 0 1px 3px 0 rgba(0, 0, 0, .12), 0 1px 2px 0 rgba(0, 0, 0, .24));
-  -webkit-border-bottom-right-radius: 10px;
-  -webkit-border-bottom-left-radius: 10px;
-  -moz-border-radius-bottomright: 10px;
-  -moz-border-radius-bottomleft: 10px;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
   font-size: 1.3em;
+  width: 100%;
+
 
 }
 
@@ -151,6 +168,7 @@ html,body{
 }
 
 .text-underlined{
+  width: 100%;
   position: relative;
   overflow: hidden;
 
@@ -197,7 +215,7 @@ html,body{
   --menuLinkColorUnactive: #241c69;
   --menuLinkOutlineOffset: -.5rem; 
 }
-body{
+.body{
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Open Sans, Ubuntu, Fira Sans, Helvetica Neue, sans-serif;
   margin: 0;
   min-height: 100vh;
@@ -212,6 +230,7 @@ body{
   padding-left: 0;
   padding-right: 0;
   margin: auto;
+  height: 100%;
 }
 
 .page__menu:nth-child(n+2){
@@ -229,6 +248,7 @@ body{
   position: fixed;
   bottom: 0px;
   min-width: 100%;
+ 
   
   .links{
     ul {list-style-type: none;}
@@ -257,13 +277,3 @@ body{
 
 /* End footer */
 
-.ligne_verticale
-{
-    position: flex;
-    width:100%;
-    border-left:3px solid #D1D1D1;
-    height:67px;
-    margin-top: 15%;
-    padding-bottom: 75%;
-   
-}

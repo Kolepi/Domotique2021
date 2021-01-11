@@ -10,7 +10,6 @@ body {
   background-color: #D1D1D1;
 }
 
-
 /*image*/
 .divphoto {
   box-shadow: rgba(7, 7, 6, 0.2) 0px 0px 10px 5px;
@@ -89,7 +88,6 @@ p {
   border-radius: 0px;
   width: 150px;
   height: 40px;
-
   background-color: #21C2FF;
   outline: none;
   text-decoration: none;
