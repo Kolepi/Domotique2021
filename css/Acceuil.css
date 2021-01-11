@@ -245,7 +245,7 @@ p{
   border-radius: 0px;
   width: 150px;
   height: 40px;
-  
+  border-radius: 25px;  
   background-color: #21C2FF;
   outline: none;
   text-decoration: none;
