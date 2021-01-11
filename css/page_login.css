@@ -1,8 +1,8 @@
 /* Login & Inscription */
+
 html,body{
     height: 100%;
 }
-
 
 .inscription{
     display: flex;
@@ -12,7 +12,6 @@ html,body{
     padding-left: 20px;
     border-radius: 25px;
     outline: none;
-    
 }
 
 .inscription_2{
@@ -22,8 +21,7 @@ html,body{
     padding: 5px;
     border-radius: 16px;
     outline: none;
-    background-color: #21C2FF;
-    
+    background-color: #21C2FF; 
 }
 
 .inscription_3{
@@ -43,7 +41,6 @@ html,body{
     height:67px;
     margin-top: 15%;
     padding-bottom: 75%;
-   
 }
 
 .coche{
@@ -51,9 +48,9 @@ html,body{
     margin-top: 10px;
     padding: 5px;
     border-radius: 7px;
-    outline: none;
-    
+    outline: none;   
 }
+
 .connection{
     display: fixed;
     margin-left: -55%;
@@ -63,6 +60,7 @@ html,body{
     border-radius: 25px;
     outline: none;
 }
+
 .connection_1{
     display: fixed;
     margin-left: -55%;
@@ -73,6 +71,7 @@ html,body{
     border-radius: 25px;
     outline: none;
 }
+
 .connection_2{
     display: flex;
     margin-left: -33.5%;
@@ -80,8 +79,7 @@ html,body{
     padding: 5px;
     border-radius: 16px;
     outline: none;
-    background-color: #21C2FF;
-    
+    background-color: #21C2FF; 
 }
 
 .container{
@@ -91,8 +89,8 @@ html,body{
     width: 100%;
     justify-content: center;
     align-content: center;
-
 }
+
 .formulaire{
     flex: 1;
     display: flex;
@@ -100,17 +98,21 @@ html,body{
     align-content: center;
     margin-top: 10px;
 }
+
 .input-form{
     padding-left: 10px;
 }
 
 /* End Login & Inscription */
+
 /*Icone de la navbar*/
+
 .fas{
   margin-left: auto;
   margin-right: auto;
   width: 30px;
 }
+
 /* Navbar */
 
 .r-link{
@@ -142,7 +144,6 @@ html,body{
   text-transform: uppercase;
 }
 
-
 .menu:hover .menu__link:not(:hover){
   --rLinkColor: rgba(22, 22, 22, .35);
 }
@@ -152,8 +153,6 @@ html,body{
   box-shadow: var(--menuBoxShadow, 0 1px 3px 0 rgba(0, 0, 0, .12), 0 1px 2px 0 rgba(0, 0, 0, .24));
   font-size: 1.3em;
   width: 100%;
-
-
 }
 
 .menu__list{
@@ -171,7 +170,6 @@ html,body{
   width: 100%;
   position: relative;
   overflow: hidden;
-
   will-change: color;
   transition: color .25s ease-out;  
 }
@@ -182,10 +180,8 @@ html,body{
   width: 0;
   height: 3px;
   background-color: currentColor;
-
   will-change: width;
   transition: width .1s ease-out;
-
   position: absolute;
   bottom: 0;
 }
@@ -207,14 +203,13 @@ html,body{
   background-image: url('../img/home.jpg');
 }
 
-
-
 .page__custom-settings{
   --menuBackgroundColor: #6c5ce7;
   --menuLinkColor: #fff;
   --menuLinkColorUnactive: #241c69;
   --menuLinkOutlineOffset: -.5rem; 
 }
+
 .body{
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Open Sans, Ubuntu, Fira Sans, Helvetica Neue, sans-serif;
   margin: 0;
@@ -276,4 +271,3 @@ html,body{
 }
 
 /* End footer */
-

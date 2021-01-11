@@ -56,26 +56,6 @@ body a:hover {
 
 /* ------------------- BOUTONS ------------------------- */
 
-.butn2 {
-    color: black ;
-    padding: 15px;
-    margin-top: 1%;
-    border-radius: 50px;
-    height: 40px;
-    width: 150px;
-    border: 1px solid #066283;
-    background-color: #21C2FF;
-    outline: none;
-    text-decoration: none;
-}
-
-.butn2:hover {
-    border: 1px solid #21C2FF;
-    background-color: #066283;
-    transition: background-color 200ms;
-    cursor: pointer;
-}
-
 .butn3 {
     color: black ;
     padding: 10px;
@@ -115,7 +95,6 @@ body a:hover {
 .card_1 {
     background-image: initial;
     background-color: rgb(25, 25, 25);
-    /* box-shadow: rgba(7, 7, 6, 0.2) 0px 0px 10px 5px; */
     box-shadow: rgba(7, 7, 6, 0.2) 0px 0px 10px 5px, inset;
     max-width: 600px;
     padding-top: 20px;

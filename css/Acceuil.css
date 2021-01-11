@@ -11,18 +11,16 @@ body {
 }
 
 /*image*/
+
 .divphoto {
   box-shadow: rgba(7, 7, 6, 0.2) 0px 0px 10px 5px;
   width: 100%;
   margin-top: 0px;
 }
 
-
 .img1 {
   height: 100%;
   width: 100%;
-
-
 }
 
 /*Texte*/
@@ -41,8 +39,6 @@ h1 {
   font-size: 21px;
   text-align: center;
   margin: auto;
-
-
 }
 
 .domotiquediv {
@@ -73,11 +69,11 @@ h1 {
 }
 
 /*Bouton Je me lance*/
+
 .boutondiv {
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;
-
   width: 150px;
   height: 40px;
 }
@@ -92,9 +88,7 @@ h1 {
   text-decoration: none;
   border: 1px solid #066283;
   border-radius: 25px;
-
 }
-
 
 .btnjml:hover {
   border: 1px solid #21C2FF;
@@ -105,11 +99,13 @@ h1 {
 }
 
 /*Icone de la navbar*/
+
 .fas{
   margin-left: auto;
   margin-right: auto;
   width: 30px;
 }
+
 /* Navbar */
 
 .r-link{
@@ -141,7 +137,6 @@ h1 {
   text-transform: uppercase;
 }
 
-
 .menu:hover .menu__link:not(:hover){
   --rLinkColor: rgba(22, 22, 22, .35);
 }
@@ -151,8 +146,6 @@ h1 {
   box-shadow: var(--menuBoxShadow, 0 1px 3px 0 rgba(0, 0, 0, .12), 0 1px 2px 0 rgba(0, 0, 0, .24));
   font-size: 1.3em;
   width: 100%;
-
-
 }
 
 .menu__list{
@@ -170,7 +163,6 @@ h1 {
   width: 100%;
   position: relative;
   overflow: hidden;
-
   will-change: color;
   transition: color .25s ease-out;  
 }
@@ -181,10 +173,8 @@ h1 {
   width: 0;
   height: 3px;
   background-color: currentColor;
-
   will-change: width;
   transition: width .1s ease-out;
-
   position: absolute;
   bottom: 0;
 }
@@ -206,14 +196,13 @@ h1 {
   background-image: url('../img/home.jpg');
 }
 
-
-
 .page__custom-settings{
   --menuBackgroundColor: #6c5ce7;
   --menuLinkColor: #fff;
   --menuLinkColorUnactive: #241c69;
   --menuLinkOutlineOffset: -.5rem; 
 }
+
 .body{
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Open Sans, Ubuntu, Fira Sans, Helvetica Neue, sans-serif;
   margin: 0;
