@@ -232,8 +232,8 @@ color: black;
 
 #colorpicker {
 	height: 240px;
-	width: 310px;
-	margin: 0 auto;
+  width: 310px;
+	margin-left: 500px;
 	padding: 10px;
 	border: 1px solid #BFBFBF;
 }
@@ -264,4 +264,3 @@ color: black;
 
 /* End slider */ 
 
-/* divflex 1 -> slider -> icone */
