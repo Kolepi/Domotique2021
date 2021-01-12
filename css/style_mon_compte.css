@@ -75,7 +75,7 @@ hr {
     .card_1 {
       width: 100%;
     }
-  }
+}
 
 /* ----------------- FIN RESPONSIVE ---------------------  */
 
@@ -106,9 +106,11 @@ hr {
     color: #16a9df;
     font-weight: bold;
 }
+
 .label-file:hover {
     color: #075a79;
 }
+
 .input-file {
     display: none;
 }

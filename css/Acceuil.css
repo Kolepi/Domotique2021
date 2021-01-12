@@ -101,11 +101,10 @@ h1 {
 }
 
 /* Navbar */
+
 .r-link{
   display: inline-flex !important;
 }
-
-
 
 .r-link[href]{
   color: var(--rLinkColor) !important;

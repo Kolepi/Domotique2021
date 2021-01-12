@@ -59,15 +59,16 @@ html,body{
 }
 
 .title_2{
-  margin-top: 115px;
+  margin-top: 105px;
   margin-right: 50px;
   margin-left: -47%;
   font-size: 2rem;
 }
+
 .connection{
     display: fixed;
     margin-left: -55%;
-    margin-top: 40%;
+    margin-top: 30%;
     padding: 10px;
     padding-left: 20px;
     border-radius: 25px;
@@ -292,6 +293,10 @@ html,body{
   .inscription_3{
     margin-top: 39%;
   }
+
+  .footer{
+    height: 100px;
+  }
 }
 
 @media all and (max-width:425px){
@@ -299,58 +304,64 @@ html,body{
     margin-top: 550px;
     margin-left: -53%;
     font-size: 1.5rem;
-    
-
   }
+
   .connection{
   margin-top: auto;
   margin-left: -71%;
   }
+
   .connection_1{
     margin-left: -71%;
-
   }
+
   .connection_2{
     margin-left: 80%;
   }
 
   .title_1{
     margin-top: 55px;
-    margin-left: 70%;
-    
+    margin-left: 70%; 
   }
 
   .inscription_3{
     margin-left: 65%;
     margin-top: 25px;
   }
+
   .inscription{
     margin-left: 65%;
-
   }
+
   .inscription_2{
     margin-left: 80%;
     margin-bottom: 75%;
   }
+
   .cgu{
     margin-left: 330px;
     margin-right: 0px ;
     width: 6em;
     text-align: center;
   }
+
   .coche{
     text-align: center;
     margin-left: 370px;
   }
+
   .ligne_verticale{
     border-left: none;
   }
+
   .footer{
     height: 100px;
   }
+
   .connection_2{
     margin-left: -39%;
   }
+
   .text-underlined{
     width: 77%;
   }
