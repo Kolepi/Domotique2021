@@ -295,38 +295,58 @@ html,body{
 }
 
 @media all and (max-width:425px){
+  .title_2{
+    margin-top: 550px;
+    margin-left: -53%;
+    font-size: 1.5rem;
+    
+
+  }
   .connection{
-  margin-top: 540px;
-  margin-left: -68%;
+  margin-top: auto;
+  margin-left: -71%;
   }
   .connection_1{
-    margin-left: -68%;
+    margin-left: -71%;
+
   }
+  .connection_2{
+    margin-left: 80%;
+  }
+
+  .title_1{
+    margin-top: 55px;
+    margin-left: 70%;
+    
+  }
+
   .inscription_3{
-    margin-left: 55%;
+    margin-left: 65%;
+    margin-top: 25px;
   }
   .inscription{
-    margin-left: 55%;
+    margin-left: 65%;
+
   }
   .inscription_2{
-    margin-left: 76%;
+    margin-left: 80%;
     margin-bottom: 75%;
   }
   .cgu{
-    margin-left: 175px;
-    margin-right: auto;
+    margin-left: 330px;
+    margin-right: 0px ;
     width: 6em;
     text-align: center;
   }
   .coche{
     text-align: center;
-    margin-left: 222px;
+    margin-left: 370px;
   }
   .ligne_verticale{
     border-left: none;
   }
   .footer{
-    height: 350px;
+    height: 100px;
   }
   .connection_2{
     margin-left: -39%;
