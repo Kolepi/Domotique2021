@@ -271,3 +271,50 @@ html,body{
 }
 
 /* End footer */
+
+/* Responsive */
+
+@media all and (max-width:768px){
+  .inscription_3{
+    margin-top: 39%;
+  }
+}
+
+@media all and (max-width:425px){
+  .connection{
+  margin-top: 540px;
+  margin-left: -68%;
+  }
+  .connection_1{
+    margin-left: -68%;
+  }
+  .inscription_3{
+    margin-left: 55%;
+  }
+  .inscription{
+    margin-left: 55%;
+  }
+  .inscription_2{
+    margin-left: 76%;
+    margin-bottom: 75%;
+  }
+  .cgu{
+    margin-left: 175px;
+    margin-right: auto;
+    width: 6em;
+    text-align: center;
+  }
+  .coche{
+    text-align: center;
+    margin-left: 222px;
+  }
+  .ligne_verticale{
+    border-left: none;
+  }
+  .footer{
+    height: 350px;
+  }
+  .connection_2{
+    margin-left: -39%;
+  }
+}
