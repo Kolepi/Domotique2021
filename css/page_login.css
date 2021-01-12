@@ -4,6 +4,12 @@ html,body{
     height: 100%;
 }
 
+.title_1{
+  margin-top: 30%;
+  margin-left: 19%;
+  margin-bottom: 5%;
+}
+
 .inscription{
     display: flex;
     margin-left: 18%;
@@ -27,7 +33,7 @@ html,body{
 .inscription_3{
     display: flex;
     margin-left: 18%;
-    margin-top: 55%;
+    margin-top: 10%;
     padding: 10px;
     padding-left: 20px;
     border-radius: 25px;
@@ -51,10 +57,14 @@ html,body{
     outline: none;   
 }
 
+.title_2{
+  margin-top: 115px;
+  margin-right: 50px;
+}
 .connection{
     display: fixed;
     margin-left: -55%;
-    margin-top: 105%;
+    margin-top: 40%;
     padding: 10px;
     padding-left: 20px;
     border-radius: 25px;
@@ -92,6 +102,7 @@ html,body{
 }
 
 .formulaire{
+     
     flex: 1;
     display: flex;
     justify-content: center;
