@@ -18,8 +18,8 @@ body a:hover {
     justify-content: space-between;
 }
 
-.posi_1 {      /* CHAMP TEXTE "Ancien Mot de Passe" */
-    margin-top: 5%;
+.posi_1 {      /* POSITION DE TOUT LES LABELS */
+    font-weight: bolder;
     padding: 10px;
     margin-right: auto;
     margin-left: auto;
@@ -29,8 +29,7 @@ body a:hover {
     outline: none;
 }
 
-.posi_2 {     /* CHAMP TEXTES DES AUTRES SAUF "Ancien Mot de Passe" et "Adresse" */
-    margin-top: 2%;
+.posi_2 {     /* CHAMP TEXTES */
     padding: 10px;
     margin-left: auto; 
     margin-right: auto; 
@@ -41,8 +40,6 @@ body a:hover {
 }
 
 .posi_3 {    /* CHAMP TEXTE DE "Adresse" */
-    margin-top: 2%;
-    margin-bottom: 5%;
     padding: 10px;
     margin-left: auto; 
     margin-right: auto; 
@@ -52,15 +49,43 @@ body a:hover {
     outline: none;
 }
 
+.posi_btn {     /* POSITION DU BOUTON */
+    margin-top: 25px;
+}
+
+.formulaire{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 10px;
+}
+
+hr {
+    color: #BFBFBF;
+    width: 65%;
+    margin-bottom: 4%;
+}
+
 /* ----------------- FIN POSITION DES CHAMPS TEXTES ---------------------  */
+
+/* ----------------- RESPONSIVE ---------------------  */
+
+@media screen and (max-width: 1280px){
+    .card_1 {
+      width: 100%;
+    }
+  }
+
+/* ----------------- FIN RESPONSIVE ---------------------  */
 
 /* ------------------- BOUTONS ------------------------- */
 
 .butn3 {
+    font-weight: bold;
     color: black ;
     padding: 10px;
     border-radius: 50px;
-    margin: auto; 
     height: 50px;
     width: 175px;
     border: 1px solid #066283;
@@ -78,11 +103,11 @@ body a:hover {
 
 .label-file {       /* BOUTON EDITION PHOTO DE PROFIL */
     cursor: pointer;
-    color: #00b1ca;
+    color: #16a9df;
     font-weight: bold;
 }
 .label-file:hover {
-    color: #25a5c4;
+    color: #075a79;
 }
 .input-file {
     display: none;
