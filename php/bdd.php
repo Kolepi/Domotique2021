@@ -13,7 +13,6 @@
         echo ("Erreur : impossible de se connecter à la bdd");
     }
 
-   
     function executeSQL($Bdd, $sql, $params = false) { //préparation et execution de la requête sql
         $query = $Bdd->prepare($sql);
         try {
