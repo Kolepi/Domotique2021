@@ -4,11 +4,11 @@ $("#connection_2").on("click", function(){
       "password" : $("#password").val()
     }, (reponse)=>{
       if(reponse === true){
-        console.log("connexion");
-        location.href="dashboard.html";
+        toastr.options.onHidden = function() { location.href = 'dashboard.html'; };
+        toastr.success("Connexion réussie. Chargement...");
       }
       else if(reponse === false){
-        console.log("non");
+        toastr.error("Identifiant et/ou mot de passe erronés");
       }
     })
   })
