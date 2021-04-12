@@ -1,4 +1,4 @@
-$("#connection_2").on("click", function(){
+$("#connection_2").on("click", function(){ //CONNEXION
     call("../php/connexion.php", {
       "username": $("#username").val(),
       "password" : $("#password").val()
@@ -12,6 +12,22 @@ $("#connection_2").on("click", function(){
       }
     })
   })
+
+$(".inscription_2").on("click",function(){
+  if ($("#password_signup").val() == $("#password_repeat_signup").val()) {
+    call("../php/inscription.php", {
+      "username": $("#login_signup").val(),
+      "email": $("#email_signup").val(),
+      "password": $("#password_signup").val(),
+    }, (reponse) => {
+      toastr.success("Inscription réussie");
+
+    });
+  }
+  else toastr.error("Vérifiez vos mot de passe");
+
+})
+
   
   
   function call (url, parameters = [], callback = false, callbackAlways = false) { 
