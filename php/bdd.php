@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $bdUser = "root"; // Utilisateur de la base de données
     $bdPasswd = ""; // Son mot de passe
     $dbname = "domohome"; // nom de la base de données
