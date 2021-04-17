@@ -1,4 +1,4 @@
-function EnableCursorsLight(color1,color2,color3) {
+function EnableCursorsLight(color1,color2,color3,callbackUpdate) {
   // Color picker
 
   var resultElement = document.getElementById('result');
@@ -25,13 +25,14 @@ function EnableCursorsLight(color1,color2,color3) {
 
       resultElement.style.background = color;
       resultElement.style.color = color;
+      callbackUpdate && callbackUpdate(colors);
     });
   });
 
   // End color picker
 }
 
-function EnableCursorsVolume(volume){
+function EnableCursorsVolume(volume,callbackUpdate){
   // Simples curseurs
 
   var volumeslider = document.getElementById('volume');
@@ -45,5 +46,11 @@ function EnableCursorsVolume(volume){
       'min': 0,
       'max': 100
     }
+  });
+
+  // Bind the color changing function to the update event.
+  volumeslider.noUiSlider.on('update', function () {
+    curseur = volumeslider.noUiSlider.get();
+    callbackUpdate && callbackUpdate(curseur);
   });
 }

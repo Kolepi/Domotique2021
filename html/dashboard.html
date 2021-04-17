@@ -36,79 +36,13 @@
 
     <!-- Dashboard -->
 
-    <section class="vertical-center-4 slider dashboard" id="dashboard">
-      <div class="card d-flex justify-content-center align-items-center">
-        <i class="fab fa-itunes-note"></i>
-        <a class="card-closer"><i class="fa fa-times"></i></a>
-        <div class="checkbox-container">
-          <input type="checkbox" class="ios" />
-        </div>
-      </div>
-      <div class="card d-flex justify-content-center align-items-center">
-        <i class="fas fa-tv"></i>
-        <a class="card-closer"><i class="fa fa-times"></i></a>
-        <div class="checkbox-container">
-          <input type="checkbox" class="ios" checked />
-        </div>
-      </div>
-      <div class="card d-flex justify-content-center align-items-center">
-        <i class="fas fa-lightbulb"></i>
-        <a class="card-closer"><i class="fa fa-times"></i></a>
-        <div class="checkbox-container">
-          <input type="checkbox" class="ios" />
-        </div>
-      </div>
-      <div class="card d-flex justify-content-center align-items-center">
-        <i class="fas fa-fire"></i>
-        <a class="card-closer"><i class="fa fa-times"></i></a>
-        <div class="checkbox-container">
-          <input type="checkbox" class="ios" checked />
-        </div>
-      </div>
-      </div>
-    </section>
+    <section class="vertical-center-4 slider dashboard" id="dashboard"></section>
 
     <!-- Cursor -->
 
     <div id="cursors">
     </div>
 
-        <!-- Footer -->
-
-        <div class="mt-5 pt-5 pb-5 footer">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-5 col-xs-12 about-company">
-                <h2>DomoHome</h2>
-                <p class="pr-5 text-white-50">Votre service de domotique</p>
-                <p><a href="#"><i class="fa fa-facebook-square mr-1"></i></a><a href="#"><i
-                      class="fa fa-linkedin-square"></i></a></p>
-              </div>
-              <div class="col-lg-3 col-xs-12 links">
-                <h4 class="mt-lg-0 mt-sm-3">Liens</h4>
-                <ul class="m-0 p-0">
-                  <li>- <a href="#">Nous contacter</a></li>
-                  <li>- <a href="#">CGU</a></li>
-                  <li>- <a href="#">A propos</a></li>
-                  <li>- <a href="#">FAQ</a></li>
-                </ul>
-              </div>
-              <div class="col-lg-4 col-xs-12 location">
-                <h4 class="mt-lg-0 mt-sm-4">Location</h4>
-                <p>159-161, Boulevard de la Liberté, 59000 Lille</p>
-                <p class="mb-0"><i class="fa fa-phone mr-3"></i>03 20 15 16 77</p>
-                <p><i class="fa fa-envelope-o mr-3"></i>info@domohome.com</p>
-              </div>
-            </div>
-            <div class="row mt-5">
-              <div class="col copyright">
-                <p class=""><small class="text-white-50">© 2021 All Rights Reserved.</small></p>
-              </div>
-            </div>
-          </div>
-        </div>
-    
-        <!-- End Footer-->
 
     <!-- Slick Script-->
 
@@ -147,30 +81,44 @@
     </script>
 
     <script type="text/javascript">
+    //Permet d'afficher la div de reglage de peripherique en fonction du click
       $(".dashboard").on("click", ".card", function () {
         $(".dashboard .card").removeClass("active");
         $(this).addClass("active");
         let equipment = $(this).data("equipment");
         AfficherCursors(equipment);
       });
+      
+      //Play/Pause
+      $("#cursors").on("click",".play",function () {
+        $(this).removeClass("play").addClass("pause");
+        $(this).find('i').removeClass("fa-play").addClass("fa-pause");
+      });
+      $("#cursors").on("click",".pause",function () {
+        $(this).removeClass("pause").addClass("play");
+        $(this).find('i').removeClass("fa-pause").addClass("fa-play");
+      });
 
+
+      //appel de la fonction
       AfficherEquipements();
 
 
-
+      //AFFICHAGE DE LA DIV DE REGLAGES DE PERIPHERIQUE
       function AfficherCursors(equipment){
         let html = "";
         switch (equipment.name) {
           case "sound":
               html='<div class="cursor">\
                 <div id="volume"></div>\
+                <div class="play"><i class="fa fa-play" aria-hidden="true" style="font-size: 75px; margin-left: 40px; "></i></div>\
               </div>';
             break;
         
             case "TV":
-              html='<div class="cursor" style="display: flex; flex-grow: 2;">\
+              html='<div class="cursor" style="display: flex;">\
                 <div id="volume"></div>\
-                <div class="play"><i class="fa fa-play" aria-hidden="true" style="font-size: 100px;"></i></div>\
+                <div class="play"><i class="fa fa-play" aria-hidden="true" style="font-size: 75px; margin-left: 40px; "></i></div>\
               </div>'
 
             break;
@@ -198,6 +146,8 @@
             case "component":
               html='<div class="cursor">\
                 <div id="volume"></div>\
+                <button class="fas fa-arrow-circle-up" style=" font-size:50px; border-style:none; border-radius:30px;background-color:white;outline-style:none;"></button>\
+                <button class="fas fa-arrow-circle-down" style=" font-size:50px; border-style:none; border-radius:30px; background-color:white;outline-style:none;"></button>\
               </div>';
             break;
         
@@ -208,25 +158,83 @@
         }
 
         $("#cursors").html(html);
-
+        
         if(equipment.intensite){
-          EnableCursorsVolume(equipment.intensite);
+          EnableCursorsVolume(equipment.intensite,(curseur)=>{
+            call("../php/updateintensite.php", {
+              "intensite":curseur,
+              "deviceid": equipment.id
+            },()=>{
+              console.log("updated");
+              let e2 = $("#dashboard").find('[data-id="' + equipment.id + '"]').data("equipment");
+              e2.intensite = curseur;
+              $("#dashboard").find('[data-id="' + equipment.id + '"]').data("equipment",e2);
+            });
+
+        });
         }
+        
+        
+        
+        
         if(equipment.color1 && equipment.color2 && equipment.color3){
-          EnableCursorsLight(equipment.color1, equipment.color2, equipment.color3);
+          EnableCursorsLight(equipment.color1, equipment.color2, equipment.color3,(colors)=>{
+            call("../php/updatecolors.php", {
+              "color1":colors[0],
+              "color2": colors[1],
+              "color3": colors[2],
+              "deviceid": equipment.id
+            }, ()=>{
+              console.log("updated");
+              let divcard = $("#dashboard").find('[data-id="' + equipment.id + '"]');
+              let e2 = divcard.data("equipment");
+              e2.color1 = colors[0];
+              e2.color2 = colors[1];
+              e2.color3 = colors[2];
+              divcard.data("equipment",e2);
+            });
+
+          });
         }
+      
+
+
       }
-
-
-
-
+      //AFFICHER L'EQUIPEMENT
       function AfficherEquipements(){
         call("../php/equipment.php", {}, (equipments)=>{
           $("#dashboard").html("");
           equipments.forEach(equipment => {
+            let iconclass = "";
+            switch (equipment.name) {
+              case "sound":
+                  iconclass='fas fa-volume-up';
+                break;
+            
+                case "TV":
+                iconclass='fas fa-tv'
+
+                break;
+            
+                case "light":
+                iconclass='fas fa-lightbulb'
+                break;
+            
+                case "heating":
+                iconclass='fas fa-thermometer-full'
+                break;
+            
+                case "component":
+                iconclass='fas fa-warehouse'
+                break;
+            
+              default:
+                toastr.error("Je ne comprend pas ton equipment frere");
+                return;
+                break;
+            }
             let html = '<div class="card d-flex justify-content-center align-items-center" data-id="' + equipment.id + '">\
-              <p style="margin-bottom: 0;">' + equipment.name + '</p>\
-              <i class="fab fa-itunes-note"></i>\
+              <i class="'+iconclass+'"></i>\
               <a class="card-closer"><i class="fa fa-times"></i></a>\
               <div class="checkbox-container">\
                 <input type="checkbox" class="ios"' + ((equipment.isenable == 1) ? " checked" : "") + ' />\
@@ -270,6 +278,9 @@
         });
       });
     }
+
+
+    
     </script>
 
     <script type="text/javascript" src="../jvscript/sliders.js">

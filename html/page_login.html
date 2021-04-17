@@ -133,12 +133,24 @@
   integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
 </script>
 
+
+
+
+
 <script>
-  $("#connection_2").on("click", function(){ //CONNEXION
+
+
+            //CONNEXION
+
+  $("#connection_2").on("click", function(){
+    //Appel du PHP
     call("../php/connexion.php", {
+      //On initialise les valeurs
       "username": $("#username").val(),
       "password" : $("#password").val()
-    }, (reponse)=>{
+    }, 
+    //Condition de reponse
+    (reponse)=>{
       if(reponse === true){
         toastr.options.onHidden = function() { location.href = 'dashboard.html'; };
         toastr.success("Connexion réussie. Chargement...");
@@ -149,14 +161,22 @@
     })
   })
 
+
+           //INSCRIPTION
+
 $(".inscription_2").on("click",function(){
+  //Si les mdp correspondent on peut appeler le php
   if ($("#password_signup").val() == $("#password_repeat_signup").val()) {
+    //Appel du PHP
     call("../php/inscription.php", {
+      //On initialise les valeurs
       "username": $("#login_signup").val(),
       "email": $("#email_signup").val(),
       "password": $("#password_signup").val(),
-    }, (reponse) => {
-      toastr.success("Inscription réussie");
+    }, 
+    //Condition de reponse
+    (reponse) => {
+      toastr.success("Inscription réussie</br>,Veuillez maintenant vous connecter.");
 
     });
   }
