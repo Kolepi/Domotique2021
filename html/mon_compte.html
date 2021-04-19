@@ -13,41 +13,41 @@
     <div class="card_1"> <!-- DIV QUI ENGLOBE TEXT AREA AUSSI-->
         <h1>Mon Profil</h1>
         <section class="card_2">
-            <img class="Avatar" src="../img/flat_avatar.png">
-            <label for="file" class="label-file">Changer de photo</label>
-            <input id="file" class="input-file" type="file">
+            <img class="avatar" src="../img/flat_avatar.png">
+            <div class="input-form_bis">
+                <label for="file" class="label-file">Changer de photo</label>
+                <input id="file" class="input-file" type="file">
+            </div>
         </section>
 
     <!-- End Profile Picture Editing -->
 
-    <!-- Text Area -->
+        <!-- Text Area -->
 
-        <form>
+        <form action="#">
             <div class="position formulaire">
-                <h2>David Magrico</h2>
+                <h2>User_91</h2>
                 <hr noshade>
-                <label for="password" class="posi_1">Mot de passe Actuelle :</label>
-                <input type="password" placeholder="Mot de passe Actuelle" class="posi_2">
-                <label for="password" class="posi_1">Nouveau mot de passe :</label>
-                <input type="password" placeholder="Nouveau mot de passe" class="posi_2">
-                <label for="password" class="posi_1">Confirmez le nouveau mot de passe :</label>
-                <input type="password" placeholder="Confirmez le nouveau mot de passe" class="posi_2">
-                <label for="email" class="posi_1"> E-mail Actuelle :</label>
-                <input type="email" placeholder="E-mail Actuelle" class="posi_2">
-                <label for="email" class="posi_1">Nouvelle e-mail :</label>
-                <input type="email" placeholder="Nouvelle e-mail" class="posi_2">
-                <label for="text" class="posi_1">Ville :</label>
-                <input type="text" placeholder="Ville" class="posi_2">
-                <label for="text" class="posi_1">Adresse :</label>
-                <input type="text" placeholder="Adresse" class="posi_3">
 
-                <button class="butn3 posi_btn">Enregistrer les modifications</button>
-                    
+                <div class="input-form">
+                    <input type="email" name="email" id="email" placeholder=" " />
+                    <label for="email">Modifier l'adresse email</label>
+                </div>
+
+                <div class="input-form">
+                    <input type="password" name="password" id="password" placeholder=" " />
+                    <label for="password">Modifier le mot de passe</label>
+                </div>
+
+                <div class="submit-form">
+                    <input type="button" class="btn" value="Enregistrer">
+                    <a href="../html/page_login.html"> <input type="button" class="btn" value="Déconnexion"></a>
+                </div>
             </div>
         </form>
     </div>
 
-    <!-- End Text Area -->
-    <script>src="/jvscript/callajax.js"</script>
+        <!-- End Text Area -->
+
 </body>
 </html>
