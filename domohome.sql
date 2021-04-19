@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 12 avr. 2021 à 19:31
--- Version du serveur :  10.4.18-MariaDB
--- Version de PHP : 7.3.27
+-- Généré le : lun. 19 avr. 2021 à 13:33
+-- Version du serveur :  10.4.17-MariaDB
+-- Version de PHP : 8.0.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,24 +31,29 @@ CREATE TABLE `device` (
   `id` int(11) NOT NULL,
   `name` varchar(55) NOT NULL,
   `isenable` tinyint(4) NOT NULL,
-  `heuredeb` datetime DEFAULT NULL,
-  `heurefin` datetime DEFAULT NULL,
-  `intensité` int(11) DEFAULT NULL,
+  `intensite` int(11) DEFAULT NULL,
   `color1` int(11) DEFAULT NULL,
   `color2` int(11) DEFAULT NULL,
-  `color3` int(11) DEFAULT NULL
+  `color3` int(11) DEFAULT NULL,
+  `idutilisateur` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `device`
 --
 
-INSERT INTO `device` (`id`, `name`, `isenable`, `heuredeb`, `heurefin`, `intensité`, `color1`, `color2`, `color3`) VALUES
-(2, 'sound', 0, NULL, NULL, 0, NULL, NULL, NULL),
-(3, 'TV', 1, NULL, NULL, NULL, NULL, NULL, NULL),
-(4, 'light', 0, NULL, NULL, 0, 100, 100, 10),
-(7, 'heating', 1, '2021-04-12 15:52:55', '2021-04-12 15:52:55', NULL, NULL, NULL, NULL),
-(8, 'component', 0, '2021-04-12 15:52:55', '2021-04-12 15:52:55', NULL, NULL, NULL, NULL);
+INSERT INTO `device` (`id`, `name`, `isenable`, `intensite`, `color1`, `color2`, `color3`, `idutilisateur`) VALUES
+(2, 'sound', 1, 89, NULL, NULL, NULL, 2),
+(3, 'TV', 1, 88, NULL, NULL, NULL, 2),
+(4, 'light', 1, 49, 45, 93, 40, 2),
+(7, 'heating', 1, 63, NULL, NULL, NULL, 2),
+(8, 'component', 1, NULL, NULL, NULL, NULL, 2),
+(9, 'component', 1, NULL, NULL, NULL, NULL, 1),
+(10, 'sound', 1, 50, NULL, NULL, NULL, 1),
+(11, 'TV', 1, 88, NULL, NULL, NULL, 1),
+(12, 'TV', 1, 50, NULL, NULL, NULL, 5),
+(13, 'sound', 1, 70, NULL, NULL, NULL, 5),
+(14, 'light', 1, 70, 45, 93, 40, 5);
 
 -- --------------------------------------------------------
 
@@ -71,7 +76,8 @@ CREATE TABLE `utilisateur` (
 
 INSERT INTO `utilisateur` (`id`, `username`, `mail`, `adress`, `city`, `password`) VALUES
 (1, 'julesh', 'julesh@gmail.com', NULL, NULL, '123456'),
-(2, 'test', 'test', NULL, NULL, 'test');
+(2, 'viktorm', 'viktorm', NULL, NULL, 'viktorm'),
+(5, 'ilyasb', 'ilyasb@hotmail.fr', NULL, NULL, 'caca');
 
 --
 -- Index pour les tables déchargées
@@ -81,7 +87,8 @@ INSERT INTO `utilisateur` (`id`, `username`, `mail`, `adress`, `city`, `password
 -- Index pour la table `device`
 --
 ALTER TABLE `device`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `FK_idutilisateur` (`idutilisateur`);
 
 --
 -- Index pour la table `utilisateur`
@@ -97,13 +104,23 @@ ALTER TABLE `utilisateur`
 -- AUTO_INCREMENT pour la table `device`
 --
 ALTER TABLE `device`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT pour la table `utilisateur`
 --
 ALTER TABLE `utilisateur`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- Contraintes pour les tables déchargées
+--
+
+--
+-- Contraintes pour la table `device`
+--
+ALTER TABLE `device`
+  ADD CONSTRAINT `FK_idutilisateur` FOREIGN KEY (`idutilisateur`) REFERENCES `utilisateur` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
