@@ -98,8 +98,14 @@ hr {
     margin: 1.2em 0;
 }
 
-.submit-form {          /* DIV POUR LES BOUTON ENREGISTRER ET DECONNEXION */
+.submit-form {          /* DIV POUR LE BOUTON ENREGISTRER*/
+    text-align: center;
+    margin-top: 2%;
+}
+
+.disconnect {          /* DIV POUR LES BOUTON RETOUR ET DECONNEXION */
     text-align: right;
+    margin-top: 5%;
 }
 
 .btn {              /* BOUTON ENREGISTRER ET DECONNEXION */
