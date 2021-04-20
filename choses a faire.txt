@@ -1,0 +1,6 @@
+-Mot de passe oublier
+-robustesse mot de passe
+-ecrire les intensités
+-Ajouter script google captcha
+-Mail existant page mon compte
+-ajouter un bouton Routine (maccro)
