@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DomoHome - Mon Compte</title>
     <link rel="stylesheet" href="../css/style_mon_compte.css">
+    <link href="../toastr-master/build/toastr.css" rel="stylesheet"/>
 </head>
 <body>
 
@@ -24,26 +25,31 @@
 
         <!-- Text Area -->
 
-        <form action="../html/dashboard.html" method="POST">
+        
             <div class="position formulaire">
-                <h2>User_91</h2>
+                <h2>test</h2>
                 <hr noshade>
 
                 <div class="input-form">
-                    <input type="email" name="email" id="email" placeholder=" " />
+                    <input type="email" id="email" placeholder=" " />
                     <label for="email">Modifier l'adresse email</label>
                 </div>
 
                 <div class="input-form">
-                    <input type="password" name="password" id="password" placeholder=" " />
+                    <input type="password" id="password" placeholder=" " />
                     <label for="password">Modifier le mot de passe</label>
                 </div>
 
+                <div class="input-form">
+                    <input type="password" id="confirm-pass" placeholder=" " />
+                    <label for="confirm-pass">Confirmer le mot de passe</label>
+                </div>
+
                 <div class="submit-form">
-                    <a href="../html/dashboard.html"> <input type="button" class="btn" value="Enregistrer"></a>
+                    <input type="button" id="changerinfo" class="btn" value="Enregistrer">
                 </div>
             </div>
-        </form>
+        
         <div class="disconnect">
             <a href="../html/page_login.html"> <input type="button" class="btn" value="Déconnexion"></a>
             <a href="../html/dashboard.html"> <input type="button" class="btn" value="Retour"></a>
@@ -53,4 +59,69 @@
         <!-- End Text Area -->
 
 </body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<script src="../toastr-master/toastr.js"></script>
+<script>        toastr.options = {
+  "closeButton": true,
+  "debug": false,
+  "newestOnTop": true,
+  "progressBar": true,
+  "preventDuplicates": false,
+  "onclick": null,
+  "showDuration": "300",
+  "hideDuration": "1000",
+  "timeOut": "2000",
+  "extendedTimeOut": "750",
+  "showEasing": "swing",
+  "hideEasing": "linear",
+  "showMethod": "fadeIn",
+  "hideMethod": "fadeOut"
+}</script>
+
+<script src="../jvscript/callajax.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+</script>
+
+<script src="https://kit.fontawesome.com/4faa15e792.js" crossorigin="anonymous">
+</script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+</script>
+
+
+<script type="text/javascript">
+$("#changerinfo").on("click",function()
+{
+  //Si les mdp correspondent on peut appeler le php
+  if ($("#password").val() != $("#confirm-pass").val()) 
+  {
+    toastr.error("Vous n'avez pas mis les mêmes mots de passe.");
+  }
+  else 
+  //Appel du PHP
+  call("../php/updateinfo.php", 
+    {
+      //On initialise les valeurs
+      "email": $("#email").val(),
+      "password": $("#password").val(),
+      
+    }, 
+    //Condition de reponse
+    (reponse) => {
+        if(reponse.errorCode){
+          toastr.warning((reponse.errorCode == 23000) ? "Ce mail est déjà utilisé" : reponse.message);
+        }
+        else if (reponse === true)
+          toastr.success("Inscription réussie</br>,Veuillez maintenant vous connecter.");
+        else
+          toastr.error("C'est chelou !");
+
+    });
+})
+</script>
+
 </html>

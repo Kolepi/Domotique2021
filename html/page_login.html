@@ -28,43 +28,6 @@
 
     <!-- End NavBar-->
 
-    <!-- Footer -->
-
-    <div class="mt-5 pt-5_pb-5 footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-5 col-xs-12 about-company">
-            <h2>DomoHome</h2>
-            <p class="pr-5 text-white-50">Votre service de domotique</p>
-            <p><a href="#"><i class="fa fa-facebook-square mr-1"></i></a><a href="#"><i
-                  class="fa fa-linkedin-square"></i></a></p>
-          </div>
-          <div class="col-lg-3 col-xs-12 links">
-            <h4 class="mt-lg-0 mt-sm-3">Liens</h4>
-            <ul class="m-0 p-0">
-              <li>- <a href="#">Nous contacter</a></li>
-              <li>- <a href="#">CGU</a></li>
-              <li>- <a href="#">A propos</a></li>
-              <li>- <a href="#">FAQ</a></li>
-            </ul>
-          </div>
-          <div class="col-lg-4 col-xs-12 location">
-            <h4 class="mt-lg-0 mt-sm-4">Location</h4>
-            <p>159-161, Boulevard de la Liberté, 59000 Lille</p>
-            <p class="mb-0"><i class="fa fa-phone mr-3"></i>03 20 15 16 77</p>
-            <p><i class="fa fa-envelope-o mr-3"></i>info@domohome.com</p>
-          </div>
-        </div>
-        <div class="row mt-5">
-          <div class="col copyright">
-            <p class=""><small class="text-white-50">© 2021 All Rights Reserved.</small></p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- End Footer-->
-
     <!-- Login & Inscription -->
 
     <div class="container">
@@ -75,6 +38,13 @@
           <input type="email" id="email_signup" placeholder="Adresse mail..." class="inscription input-form">
           <input type="password" id="password_signup" placeholder="Mot de passe..." class="inscription input-form">
           <input type="password" id="password_repeat_signup" placeholder="Confirmer le mot de passe..." class="inscription input-form">
+          <select class="inscription input-form">
+            <option>Dans quelle ville êtes-vous né ?</option>
+            <option>Quel est votre film favori ?</option>
+            <option>Nom de votre première ecole</option>
+            <option>Quelle est votre couleur favorite ?</option>
+        </select>
+        <input type="password" id="secret" placeholder="Réponse secrète..." class="inscription input-form"></br>
           <input type="checkbox" class="coche"><p class="cgu"> J'ai bien lu les conditions générales d'utilisation</p>
 
           <button type="inscri" class="inscription_2">S'inscrire</button>
@@ -88,20 +58,52 @@
           <h2 class="title_2">Connexion</h2>
           <input type="nom1" id="username" placeholder="Nom d'utilisateur..." class="connection input-form">
           <input type="password" id="password" placeholder="Mot de passe..." class="connection_1 input-form">
-            <button type="connect" id="connection_2" class="connection_2">Se connecter</button>
+            <button type="connect" id="connection_2" class="connection_2">Se connecter</button></br>
+            <button type="button" class="connection_2" data-toggle="modal" data-target="#exampleModal">
+              Mot de passe oublié
+            </button>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Mot de passe oublié</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="input-form">
+                      <input type="email" name="email" id="email" placeholder=" " />
+                      <label for="email">Saisissez votre adresse email</label>
+                  </div>
+   
+                  <div class="input-form">
+                      <input type="password" name="password" id="password" placeholder=" " />
+                      <label for="password">Saisissez votre mot secret</label>
+                  </div>
+   
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                    <button type="button" id="reponse_secret" class="btn btn-primary">Envoyer</button>
+                  </div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
         </div>
       </div>
     </div>
+    
 
     <!-- End Login & Inscription -->
   </div>
 
 </body>
-
-        <!--Script Bootstrap-->
-
-
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <!--Script Bootstrap-->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 <script src="../toastr-master/toastr.js"></script>
 <script>        toastr.options = {
@@ -165,27 +167,43 @@
            //INSCRIPTION
 
 $(".inscription_2").on("click",function(){
-  if($("#password_signup").val() !=="" && $("#login_signup").val() !=="" && $("#email_signup").val() !=="" && $("#password_repeat_signup").val() !=="" ){
+  if($("#password_signup").val() =="" || $("#login_signup").val() =="" || $("#email_signup").val() =="" || $("#password_repeat_signup").val() =="" || !$(".coche").is(":checked") || $("#secret").val() =="" || $("#secret").val() ==""){
+    toastr.error("Veuillez remplir tout les champs")}
+  else if (($("#password_signup").val()).length < 8 ){
+    toastr.error("Veuillez mettre un mot de passe de plus de 8 caractères");
+  }
+  else if ($("#password_signup").val() == $("#password_repeat_signup").val()) {
   //Si les mdp correspondent on peut appeler le php
-  if ($("#password_signup").val() == $("#password_repeat_signup").val()) {
-    //Appel du PHP
-    call("../php/inscription.php", {
-      //On initialise les valeurs
-      "username": $("#login_signup").val(),
-      "email": $("#email_signup").val(),
-      "password": $("#password_signup").val(),
-    }, 
-    //Condition de reponse
-    (reponse) => {
-      toastr.success("Inscription réussie</br>,Veuillez maintenant vous connecter.");
+    
+      //Appel du PHP
+      call("../php/inscription.php", {
+        //On initialise les valeurs
+        "username": $("#login_signup").val(),
+        "email": $("#email_signup").val(),
+        "password": $("#password_signup").val(),
+        "secret": $("#secret").val(),
+      }, 
+      //Condition de reponse
+      (reponse) => {
+        if(reponse.errorCode){
+          toastr.warning((reponse.errorCode == 23000) ? "Ce mail est déjà utilisé" : reponse.message);
+        }
+        else if (reponse === true)
+          toastr.success("Inscription réussie</br>,Veuillez maintenant vous connecter.");
+        else
+          toastr.error("C'est chelou !");
 
     });
   }
   else toastr.error("Vérifiez vos mot de passe");
-  }
-  else toastr.error("Veuillez remplir tout les champs");
+  
+  
   
 
+})
+
+$("#reponse_secret").on("click", function(){
+  toastr.success("Si les données saisis sont correct , un mail vous sera envoyé , Merci!")
 })
 </script>
 
