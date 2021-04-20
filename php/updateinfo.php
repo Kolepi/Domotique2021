@@ -10,7 +10,6 @@ $sql = "";
 $param=array();
 
 
-
 if ( isset($_POST["password"]) && !empty(trim($_POST["password"])) && strlen($_POST["password"])<8){
     echo json_encode(array(
         "errorCode" =>19,
@@ -18,6 +17,7 @@ if ( isset($_POST["password"]) && !empty(trim($_POST["password"])) && strlen($_P
     ));
     die();
 }
+
 
 
 
@@ -48,8 +48,6 @@ catch (\Exception $e) {
     die();
 }
 echo json_encode(true);
-
-
 
 
 ?>
