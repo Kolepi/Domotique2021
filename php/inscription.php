@@ -9,7 +9,7 @@ header("content-type:application/json; charset=utf-8");
 $sql = "INSERT INTO utilisateur (`username`, `mail`, `password`,`secret`) VALUES(?,?,?,?)";
 //Valeurs d'insertion
 try {
-    $query = executeSQL($Bdd,$sql,array($_POST["username"],$_POST["email"],$_POST["password"],$_POST["secret"]));
+    $query = executeSQL($Bdd,$sql,array(addslashes($_POST["username"]),addslashes($_POST["email"]),addslashes($_POST["password"]),addslashes($_POST["secret"])));
 }
 catch (\Exception $e) {
     $messageerr = getErrorCode($e->getMessage());
