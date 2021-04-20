@@ -97,11 +97,8 @@
   </div>
 
 </body>
-
-        <!--Script Bootstrap-->
-
-
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <!--Script Bootstrap-->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 <script src="../toastr-master/toastr.js"></script>
 <script>        toastr.options = {
@@ -165,25 +162,36 @@
            //INSCRIPTION
 
 $(".inscription_2").on("click",function(){
-  if($("#password_signup").val() !=="" && $("#login_signup").val() !=="" && $("#email_signup").val() !=="" && $("#password_repeat_signup").val() !=="" ){
+  if($("#password_signup").val() =="" || $("#login_signup").val() =="" || $("#email_signup").val() =="" || $("#password_repeat_signup").val() =="" || !$(".coche").is(":checked")){
+    toastr.error("Veuillez remplir tout les champs")}
+  else if (($("#password_signup").val()).length < 8 ){
+    toastr.error("Veuillez mettre un mot de passe de plus de 8 caractères");
+  }
+  else if ($("#password_signup").val() == $("#password_repeat_signup").val()) {
   //Si les mdp correspondent on peut appeler le php
-  if ($("#password_signup").val() == $("#password_repeat_signup").val()) {
-    //Appel du PHP
-    call("../php/inscription.php", {
-      //On initialise les valeurs
-      "username": $("#login_signup").val(),
-      "email": $("#email_signup").val(),
-      "password": $("#password_signup").val(),
-    }, 
-    //Condition de reponse
-    (reponse) => {
-      toastr.success("Inscription réussie</br>,Veuillez maintenant vous connecter.");
+    
+      //Appel du PHP
+      call("../php/inscription.php", {
+        //On initialise les valeurs
+        "username": $("#login_signup").val(),
+        "email": $("#email_signup").val(),
+        "password": $("#password_signup").val(),
+      }, 
+      //Condition de reponse
+      (reponse) => {
+        if(reponse.errorCode){
+          toastr.warning((reponse.errorCode == 23000) ? "Ce mail est déjà utilisé" : reponse.message);
+        }
+        else if (reponse === true)
+          toastr.success("Inscription réussie</br>,Veuillez maintenant vous connecter.");
+        else
+          toastr.error("C'est chelou !");
 
     });
   }
   else toastr.error("Vérifiez vos mot de passe");
-  }
-  else toastr.error("Veuillez remplir tout les champs");
+  
+  
   
 
 })
