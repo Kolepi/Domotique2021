@@ -9,8 +9,6 @@ header("content-type:application/json; charset=utf-8");
 $sql = "";
 $param=array();
 
-
-
 if ( isset($_POST["password"]) && !empty(trim($_POST["password"])) && strlen($_POST["password"])<8){
     echo json_encode(array(
         "errorCode" =>19,

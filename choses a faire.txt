@@ -4,4 +4,4 @@
 -Reverifier le mdp (page compte)	X
 -Mail existant page mon compte		
 -ajouter un bouton Routine (maccro)
-bloquer les requetes sql	
+

@@ -1,0 +1,36 @@
+
+
+#Profil:
+
+front :
+
+-bouton retour
+-bouton deconnexion
+-modifier mail
+-modifier mdp
+-submit enregistrer
+
+back:
+-Form method POST
+-submit enregistrer (fonctionnel)
+-bouton retour (fonctionnel)
+-bouton deconnexion (fonctionnel)
+
+
+#DASHBOARD:
+
+front :
+-Interface interactive
+
+
+Back:
+-enregsitrement des parametres dans la Bdd
+
+
+#Page login:
+
+back:
++Connexion 
++Inscription( plusieurs conditions a presenter )
+
+

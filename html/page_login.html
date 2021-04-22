@@ -168,6 +168,7 @@
 
 $(".inscription_2").on("click",function(){
   if($("#password_signup").val() =="" || $("#login_signup").val() =="" || $("#email_signup").val() =="" || $("#password_repeat_signup").val() =="" || !$(".coche").is(":checked") || $("#secret").val() =="" || $("#secret").val() ==""){
+
     toastr.error("Veuillez remplir tout les champs")}
   else if (($("#password_signup").val()).length < 8 ){
     toastr.error("Veuillez mettre un mot de passe de plus de 8 caractères");
@@ -182,6 +183,7 @@ $(".inscription_2").on("click",function(){
         "email": $("#email_signup").val(),
         "password": $("#password_signup").val(),
         "secret": $("#secret").val(),
+
       }, 
       //Condition de reponse
       (reponse) => {
@@ -196,10 +198,6 @@ $(".inscription_2").on("click",function(){
     });
   }
   else toastr.error("Vérifiez vos mot de passe");
-  
-  
-  
-
 })
 
 $("#reponse_secret").on("click", function(){
