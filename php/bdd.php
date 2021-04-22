@@ -8,6 +8,7 @@
     {
         $Bdd = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $bdUser, $bdPasswd);// SE CONNECTER A LA BDD
         $Bdd->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ); // METTRE LE MODE OBJET PAR DEFAUT
+        $Bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // METTRE LE MODE ERREUR EN EXCEPTION
     }
     catch (PDOException $e)
     {
@@ -15,14 +16,19 @@
     }
 
     function executeSQL($Bdd, $sql, $params = false) { //préparation et execution de la requête sql
-        $query = $Bdd->prepare($sql);
         try {
+            $query = $Bdd->prepare($sql);
             if ($params == false)
                 $query->execute();
             else
                 $query->execute($params);
-        } catch (PDOException $e) {
-            throw  new \Exception($e->getMessage() . " " . $sql);
+            return $query;
+        } catch (Exception $e) {
+            throw new \Exception($e->getMessage() . " " . $sql);
         }
-        return $query;
+    }
+
+    function getErrorCode($message){
+        preg_match("/SQLSTATE\[([0-9]*)\]:(.*?)$/",$message,$matches);
+        return $matches;
     }

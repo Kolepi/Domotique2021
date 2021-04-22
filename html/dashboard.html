@@ -18,14 +18,46 @@
 
 <body>
 
+  <!-- Pop-Up -->
+  
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Votre Routine</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="input-form">
+            <select name="" id="routine_select">
+              <option value="Chill">Chill</option>
+              <option value="Soirée">Soirée</option>
+              <option value="Reveil">Réveil</option>
+            </select>
+        </div>
+
+        
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+          <button type="button" id="reponse_secret" class="btn btn-primary">Choisir</button>
+        </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
   <!-- Navbar -->
 
   <div class="page">
     <nav class="page__menu menu">
       <ul class="menu__list r-list">
-        <li class="menu__group"><a href="../html/dashboard.html" class="menu__link r-link text-underlined"><i
-              class="fa fa-lightbulb-o"></i></a></li>
-        <li class="menu__group"><a href="../html/Acceuil.html" class="menu__link r-link text-underlined"><i class="fas fa-home"></i></a>
+        <li class="menu__group"><a href="../html/page_login.html" class="menu__link r-link text-underlined"><i class="fas fa-sign-out-alt"></i></a></li>
+        <li class="menu__group"><a href=""  data-toggle="modal" data-target="#exampleModal" class="menu__link r-link text-underlined"><i class="fas fa-user-clock"></i></a>
         </li>
         <li class="menu__group"><a href="../html/mon_compte.html" class="menu__link r-link text-underlined"><i
               class="fas fa-user-circle"></i></a></li>
@@ -279,10 +311,15 @@
       });
     }
 
-
+    function setvolume(){
+      var value = $("#volume").val();
+    $("#volume_value").text(value);
+    }
+    
+    
+    
     
     </script>
-
     <script type="text/javascript" src="../jvscript/sliders.js">
     </script>
 
